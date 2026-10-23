@@ -23,7 +23,7 @@ La compilación produce los archivos estáticos en `build/client`, directorio pr
 
 Conecta este repositorio a Cloudflare Pages mediante la integración nativa de GitHub. Configura la rama de producción `main`, el comando de compilación `npm run build` y el directorio de salida `build/client`. Cloudflare instala las dependencias desde `package-lock.json`; no se necesita un servidor Node.js permanente ni un flujo de GitHub Actions. Cada nuevo commit enviado a `main` inicia una nueva compilación y publicación.
 
-Para usar el dominio asignado en el sitemap, `robots.txt`, los metadatos Open Graph y los datos estructurados, configura las variables de compilación `SITE_URL` y `VITE_SITE_URL` con la URL HTTPS real de Pages. No son necesarias para generar las rutas HTML.
+El dominio principal es `https://valana.tech`. En la configuración de producción de Pages, `SITE_URL` y `VITE_SITE_URL` deben tener ese valor para generar el sitemap, `robots.txt`, los metadatos Open Graph y los datos estructurados. El subdominio `https://portafolio-benjamin.pages.dev` sigue disponible como dirección de Pages. La versión de Node para compilar está fijada en `.node-version`.
 
 Si el dominio público cambia más adelante, actualiza ambas variables y vuelve a desplegar.
 
