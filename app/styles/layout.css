@@ -302,3 +302,7 @@ html { scroll-padding-top: 0; }
   .hero__portrait-wrap { height: clamp(315px, 86vw, 390px); margin-top: 8px; }
   .hero__portrait { width: 100%; left: 5%; bottom: -40%; }
 }
+
+@media (max-width: 680px) {
+  .hero__portrait-wrap { display: none; }
+}
