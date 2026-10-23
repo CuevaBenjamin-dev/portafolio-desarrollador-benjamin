@@ -9,14 +9,17 @@ import { Projects } from "../sections/Projects";
 import { Specialties } from "../sections/Specialties";
 import { Technologies } from "../sections/Technologies";
 
-export const meta: MetaFunction = () => [
-  { title: site.title },
-  { name: "description", content: site.description },
-  { property: "og:type", content: "website" },
-  { property: "og:title", content: site.title },
-  { property: "og:description", content: site.description },
-  ...(absoluteUrl("/") ? [{ property: "og:url", content: absoluteUrl("/") }] : []),
-];
+export const meta: MetaFunction = () => {
+  const url = absoluteUrl("/");
+  return [
+    { title: site.title },
+    { name: "description", content: site.description },
+    { property: "og:type", content: "website" },
+    { property: "og:title", content: site.title },
+    { property: "og:description", content: site.description },
+    ...(url ? [{ property: "og:url", content: url }, { tagName: "link", rel: "canonical", href: url }] : []),
+  ];
+};
 
 export default function Home() {
   const person = {

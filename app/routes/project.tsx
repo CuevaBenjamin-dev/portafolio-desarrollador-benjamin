@@ -16,7 +16,7 @@ export const meta: MetaFunction = ({ params }) => {
     { property: "og:type", content: "article" },
     { property: "og:title", content: title },
     { property: "og:description", content: project.summary },
-    ...(url ? [{ property: "og:url", content: url }] : []),
+    ...(url ? [{ property: "og:url", content: url }, { tagName: "link", rel: "canonical", href: url }] : []),
   ];
 };
 
